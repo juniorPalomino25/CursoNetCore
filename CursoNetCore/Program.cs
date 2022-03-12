@@ -6,7 +6,11 @@ namespace CursoNetCore
     {
         static void Main(string[] args)
         {
-            //tipo de variables
+            /*
+            
+             * //tipo de variables
+
+            //valores numericos
             int year = 22; //entero
             float flotante = 13.5f; //float 7 dígitos -> 32 bits
             double doble = 12.004; //15 - 16 dígitos  -> 64 bits
@@ -28,6 +32,25 @@ namespace CursoNetCore
             Int16 ciclo = 9;
 
             Console.WriteLine("Hello World! {0} {1} ", year, ciclo);
+            Console.ReadLine();
+
+             */
+
+            // Operadores
+
+            //operador aritmético
+            int valor1 = 10;
+            int valor2 = 2;
+            var suma = valor1 + valor2;
+            var resta = valor1 - valor2;
+            var mult = valor1 * valor2;
+            var div = valor1 / valor2;
+
+            Console.WriteLine("Operadores matemáticos \n");
+            Console.WriteLine("la suma es: " + suma + "\n");
+            Console.WriteLine("la resta es: " + resta + "\n");
+            Console.WriteLine("la multiplicacion es: " + mult + "\n");
+            Console.WriteLine("la division es: " + div + "\n");
             Console.ReadLine();
         }
     }
