@@ -7,6 +7,7 @@ namespace Curso_de_net_core
     public class Menu : IMenu
     {
         Almacen g = new Golosinas();
+        Almacen f = new Frutas();
         public void golosinas()
         {
             var des = "";
@@ -87,6 +88,87 @@ namespace Curso_de_net_core
             } while (valor);
         }
 
+        public void frutas()
+        {
+            var des = "";
+            var valor = false;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Venta de frutas");
+                if (g.getProducto("").Count.Equals(0))
+                {
+                    Console.WriteLine("No hay frutas");
+                    Console.WriteLine("Desea agregar frutas? precione la teclas s/n");
+                    des = Console.ReadLine();
+                    if (des.Equals("s"))
+                    {
+                        Console.WriteLine("Cuantas frutas va agregar?");
+                        int cant = Convert.ToInt16(Console.ReadLine());
+                        for (int i = 0; i < cant; i++)
+                        {
+                            Console.WriteLine("Nueva frutas");
+                            Console.WriteLine("Ingrese la id");
+                            var id = Console.ReadLine();
+                            Console.WriteLine("Ingrese el nombre");
+                            var nombre = Console.ReadLine();
+                            Console.WriteLine("Ingrese el precio");
+                            var precio = Convert.ToDouble(Console.ReadLine());
+                            g.addProducto(new Producto
+                            {
+                                ID = id,
+                                Nombre = nombre,
+                                Precio = precio
+                            });
+                        }
+                        Console.WriteLine("Desea ir al inicio s/n");
+                        des = Console.ReadLine();
+                        if (des.Equals("s"))
+                        {
+                            valor = true;
+                        }
+                        else
+                        {
+                            valor = false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Desea ir al inicio s/n");
+                        des = Console.ReadLine();
+                        if (des.Equals("s"))
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Venta de golosinas y frutas");
+                        }
+                        else
+                        {
+                            valor = false;
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Lista de frutas");
+                    foreach (var item in g.getProducto(""))
+                    {
+                        Console.WriteLine($"Codigo {item.ID} frutas {item.Nombre} Precio {item.Precio}");
+                    }
+                    Console.WriteLine("Desea realizar ventas de frutas? s/n");
+                    des = Console.ReadLine();
+                    if (des.Equals("s"))
+                    {
+                        ventas();
+                    }
+                    else
+                    {
+                        valor = false;
+                    }
+                }
+
+            } while (valor);
+        }
+
         public double solicitarPago()
         {
             bool pagoCorrecto = false;
@@ -118,7 +200,7 @@ namespace Curso_de_net_core
                 var productos = g.getProducto(producto);
                 while (productos.Count.Equals(0))
                 {
-                    Console.WriteLine("Golosinas no disponible, por favor seleccione otro.");
+                    Console.WriteLine("Producto no disponible, por favor seleccione otro.");
                     producto = Console.ReadLine();
                     productos = g.getProducto(producto);
                 }
