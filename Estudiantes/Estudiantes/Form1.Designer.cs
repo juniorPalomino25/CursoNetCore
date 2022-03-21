@@ -42,7 +42,6 @@
             this.labelApellido = new System.Windows.Forms.Label();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.labelNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -68,9 +68,9 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(-1, -5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(871, 59);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -79,7 +79,7 @@
             // 
             this.pictureBox1.Image = global::Estudiantes.Properties.Resources.logo_google;
             this.pictureBox1.Location = new System.Drawing.Point(9, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,6 +104,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.textBoxNombre);
             this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonCancelkar);
             this.groupBox2.Controls.Add(this.buttonAgregar);
@@ -114,13 +115,12 @@
             this.groupBox2.Controls.Add(this.labelApellido);
             this.groupBox2.Controls.Add(this.textBoxApellido);
             this.groupBox2.Controls.Add(this.labelNombre);
-            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(8, 121);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(284, 307);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -134,7 +134,7 @@
             this.buttonEliminar.ForeColor = System.Drawing.Color.White;
             this.buttonEliminar.Image = global::Estudiantes.Properties.Resources.Delete;
             this.buttonEliminar.Location = new System.Drawing.Point(94, 259);
-            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(81, 31);
             this.buttonEliminar.TabIndex = 6;
@@ -149,7 +149,7 @@
             this.buttonCancelkar.ForeColor = System.Drawing.Color.White;
             this.buttonCancelkar.Image = global::Estudiantes.Properties.Resources.Cancelar;
             this.buttonCancelkar.Location = new System.Drawing.Point(179, 259);
-            this.buttonCancelkar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelkar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelkar.Name = "buttonCancelkar";
             this.buttonCancelkar.Size = new System.Drawing.Size(81, 31);
             this.buttonCancelkar.TabIndex = 7;
@@ -164,7 +164,7 @@
             this.buttonAgregar.ForeColor = System.Drawing.Color.White;
             this.buttonAgregar.Image = global::Estudiantes.Properties.Resources.Agregar;
             this.buttonAgregar.Location = new System.Drawing.Point(9, 259);
-            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(81, 31);
             this.buttonAgregar.TabIndex = 5;
@@ -184,11 +184,13 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(143, 219);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(128, 23);
             this.textBoxEmail.TabIndex = 4;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
+            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEmail_KeyPress);
             // 
             // labelNid
             // 
@@ -204,11 +206,13 @@
             // textBoxNid
             // 
             this.textBoxNid.Location = new System.Drawing.Point(4, 175);
-            this.textBoxNid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNid.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNid.Multiline = true;
             this.textBoxNid.Name = "textBoxNid";
             this.textBoxNid.Size = new System.Drawing.Size(128, 23);
             this.textBoxNid.TabIndex = 1;
+            this.textBoxNid.TextChanged += new System.EventHandler(this.textBoxNid_TextChanged);
+            this.textBoxNid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNid_KeyPress);
             // 
             // labelApellido
             // 
@@ -224,11 +228,13 @@
             // textBoxApellido
             // 
             this.textBoxApellido.Location = new System.Drawing.Point(4, 219);
-            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxApellido.Multiline = true;
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(128, 23);
             this.textBoxApellido.TabIndex = 3;
+            this.textBoxApellido.TextChanged += new System.EventHandler(this.textBoxApellido_TextChanged);
+            this.textBoxApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxApellido_KeyPress);
             // 
             // labelNombre
             // 
@@ -241,22 +247,13 @@
             this.labelNombre.TabIndex = 3;
             this.labelNombre.Text = "Nombre";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(143, 175);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 23);
-            this.textBox1.TabIndex = 2;
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.pictureBoxImage);
             this.groupBox5.Location = new System.Drawing.Point(83, 31);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(129, 107);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
@@ -267,7 +264,7 @@
             this.pictureBoxImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxImage.Image = global::Estudiantes.Properties.Resources.logo_google;
             this.pictureBoxImage.Location = new System.Drawing.Point(24, 16);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(87, 81);
             this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,9 +292,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Location = new System.Drawing.Point(296, 121);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(563, 307);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -322,9 +319,9 @@
             this.groupBox4.Controls.Add(this.textBoxBuscar);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(8, 58);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(851, 50);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
@@ -333,7 +330,7 @@
             // 
             this.textBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBuscar.Location = new System.Drawing.Point(83, 14);
-            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Multiline = true;
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(174, 24);
@@ -351,6 +348,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar";
             // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(143, 175);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNombre.Multiline = true;
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(128, 23);
+            this.textBoxNombre.TabIndex = 2;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +369,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de estudiantes";
@@ -399,12 +407,12 @@
         private System.Windows.Forms.Label labelApellido;
         private System.Windows.Forms.TextBox textBoxApellido;
         private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.Button buttonCancelkar;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxNombre;
     }
 }
 
